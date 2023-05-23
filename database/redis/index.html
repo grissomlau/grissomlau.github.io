@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Grissom's Blog</title>
-<meta name="description" content="An amazing website.">
+<!-- begin _includes/seo.html --><title>Redis - Grissom’s Blog</title>
+<meta name="description" content="Redis 特性 参考：https://www.cnblogs.com/kismetv/p/9853040.html, 它的实现原理和一些解决方案非常值得学习">
 
 
   <meta name="author" content="Grissom">
   
+  <meta property="article:author" content="Grissom">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Grissom's Blog">
-<meta property="og:title" content="Grissom’s Blog">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Redis">
+<meta property="og:url" content="http://localhost:4000/database/redis/">
 
 
-  <meta property="og:description" content="An amazing website.">
-
-
-
+  <meta property="og:description" content="Redis 特性 参考：https://www.cnblogs.com/kismetv/p/9853040.html, 它的实现原理和一些解决方案非常值得学习">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2023-05-22T14:28:33+08:00">
 
 
 
@@ -41,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/database/redis/">
 
 
 
@@ -92,7 +96,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -143,6 +147,42 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#database" itemprop="item"><span itemprop="name">Database</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Redis</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -260,290 +300,18 @@
 
 
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
-
-
-<h3 class="archive__subtitle">Recent posts</h3>
-
-
-
-
-<div class="entries-list">
-  
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Redis">
+    <meta itemprop="description" content="Redis 特性参考：https://www.cnblogs.com/kismetv/p/9853040.html,它的实现原理和一些解决方案非常值得学习">
+    <meta itemprop="datePublished" content="2023-05-22T14:28:33+08:00">
     
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/database/mariadb/" rel="permalink">MariaDB
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-05-23T10:28:33+08:00">May 23, 2023</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">安装
-服务端
-sudo apt-get install mariadb-server
-
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/idea/summary/" rel="permalink">Summary
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">linux
-权限管理
-
-  角色分为三类：owner、group、other
-  三类权限分别为：r(4)、w(2)、x(1)
-  一个文件只能有一个所有者，但可以有多个用户组
-  一个用户可以同时属于多个组，但只有一个主组
-  一个用户的权限由其所有者权限和所属组权限共同决定
-
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/network/scientific-surfing/" rel="permalink">科学上网
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">OpenVPN
-安装
-服务端
-
-  参考 https://github.com/angristan/openvpn-install
-  全部默认即可
-  vpn 会安装虚拟网卡接管全部流量，如果不需要全部走vpn, 需要配置route, 可以在客户端也可以在服务端配置,但最终连上服务端时，服务端会把 push “...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/security/ssl-ssh-login/" rel="permalink">SSL SSH Login
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">申请免费的ssl证书
-国内的阿里云、腾讯云、百度云等
-都有免费的ssl证书，最长有效期1年，但是需要备案，备案需要花钱和实名制，所以这里不推荐使用。
-国外的letsencrypt
-可以申请免费的ssl证书，有效期3个月，但是可以自动续期，所以这里推荐使用。
-需要安装certbot，将nginx.cnf交给她管理，...</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/os/linux/" rel="permalink">Linux
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">登录
-SSH 帐号和密码
-</p>
-  </article>
-</div>
-
-  
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/database/redis/" rel="permalink">Redis
-</a>
-      
-    </h2>
-    
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Redis
+</h1>
+          
 
   <p class="page__meta">
     
@@ -571,24 +339,143 @@ SSH 帐号和密码
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Redis 特性
-参考：https://www.cnblogs.com/kismetv/p/9853040.html,
-它的实现原理和一些解决方案非常值得学习
-</p>
-  </article>
-</div>
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#redis-特性">Redis 特性</a><ul><li><a href="#持久化">持久化</a><ul><li><a href="#分类">分类</a></li><li><a href="#原理">原理</a></li></ul></li><li><a href="#主从复制">主从复制</a></li><li><a href="#哨兵高可用">哨兵：高可用</a></li><li><a href="#集群分布式">集群：分布式</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="redis-特性">Redis 特性</h1>
+<p>参考：https://www.cnblogs.com/kismetv/p/9853040.html,
+它的实现原理和一些解决方案非常值得学习</p>
+
+<h2 id="持久化">持久化</h2>
+<h3 id="分类">分类</h3>
+<ul>
+  <li>RDB</li>
+  <li>AOF</li>
+</ul>
+
+<h3 id="原理">原理</h3>
+<ul>
+  <li>参考：https://www.cnblogs.com/kismetv/p/9853040.html</li>
+</ul>
+
+<h2 id="主从复制">主从复制</h2>
+<ul>
+  <li>一主多从</li>
+  <li>读写分离</li>
+</ul>
+
+<h2 id="哨兵高可用">哨兵：高可用</h2>
+<ul>
+  <li>需要独立的哨兵进程，哨兵进程会监控 Redis master 和 slave 进程</li>
+  <li>故障转移，自动实现主从切换</li>
+  <li>监控，负责监控 Redis master 和 slave 进程是否正常工作</li>
+</ul>
+
+<h2 id="集群分布式">集群：分布式</h2>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
 
   
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#cache" class="page__taxonomy-item" rel="tag">cache</a><span class="sep">, </span>
+    
+      <a href="/tags/#redis" class="page__taxonomy-item" rel="tag">redis</a>
+    
+    </span>
+  </p>
 
 
 
-<div class="list__item">
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#database" class="page__taxonomy-item" rel="tag">database</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-22T14:28:33+08:00">May 22, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Redis%20http%3A%2F%2Flocalhost%3A4000%2Fdatabase%2Fredis%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdatabase%2Fredis%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdatabase%2Fredis%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/welcome-to-jekyll/" class="pagination--pager" title="Welcome to Jekyll!
+">Previous</a>
+    
+    
+      <a href="/os/linux/" class="pagination--pager" title="Linux
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+        <a href="/database/mariadb/" rel="permalink">MariaDB
 </a>
       
     </h2>
@@ -598,9 +485,9 @@ SSH 帐号和密码
     
       
       <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2023-05-20T14:28:33+08:00">May 20, 2023</time>
+        <time datetime="2023-05-23T10:28:33+08:00">May 23, 2023</time>
       </span>
     
 
@@ -611,7 +498,164 @@ SSH 帐号和密码
       
 
       <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">安装
+服务端
+sudo apt-get install mariadb-server
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/idea/summary/" rel="permalink">Summary
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">linux
+权限管理
+
+  角色分为三类：owner、group、other
+  三类权限分别为：r(4)、w(2)、x(1)
+  一个文件只能有一个所有者，但可以有多个用户组
+  一个用户可以同时属于多个组，但只有一个主组
+  一个用户的权限由其所有者权限和所属组权限共同决定
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/network/scientific-surfing/" rel="permalink">科学上网
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">OpenVPN
+安装
+服务端
+
+  参考 https://github.com/angristan/openvpn-install
+  全部默认即可
+  vpn 会安装虚拟网卡接管全部流量，如果不需要全部走vpn, 需要配置route, 可以在客户端也可以在服务端配置,但最终连上服务端时，服务端会把 push “...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/security/ssl-ssh-login/" rel="permalink">SSL SSH Login
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           less than 1 minute read
         
@@ -620,18 +664,22 @@ SSH 帐号和密码
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+    <p class="archive__item-excerpt" itemprop="description">申请免费的ssl证书
+国内的阿里云、腾讯云、百度云等
+都有免费的ssl证书，最长有效期1年，但是需要备案，备案需要花钱和实名制，所以这里不推荐使用。
+国外的letsencrypt
+可以申请免费的ssl证书，有效期3个月，但是可以自动续期，所以这里推荐使用。
+需要安装certbot，将nginx.cnf交给她管理，...</p>
   </article>
 </div>
 
+        
+      </div>
+    </div>
+  
   
 </div>
 
-
-
-
-  </div>
-</div>
     </div>
 
     

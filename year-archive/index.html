@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Grissom's Blog</title>
+<!-- begin _includes/seo.html --><title>Posts by Year - Grissom’s Blog</title>
 <meta name="description" content="An amazing website.">
 
 
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Grissom's Blog">
-<meta property="og:title" content="Grissom’s Blog">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Posts by Year">
+<meta property="og:url" content="http://localhost:4000/year-archive/">
 
 
   <meta property="og:description" content="An amazing website.">
@@ -41,7 +41,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/year-archive/">
 
 
 
@@ -92,7 +92,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--posts">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -143,6 +143,32 @@
     <div class="initial-content">
       
 
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Posts by Year</li>
+      
+    
+  </ol>
+</nav>
+
+  
 
 
 <div id="main" role="main">
@@ -262,19 +288,30 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title"></h1>
+      <h1 id="page-title" class="page__title">Posts by Year</h1>
     
     
 
 
-<h3 class="archive__subtitle">Recent posts</h3>
-
-
-
-
-<div class="entries-list">
+<ul class="taxonomy__index">
   
-    
+  
+    <li>
+      <a href="#2023">
+        <strong>2023</strong> <span class="taxonomy__count">7</span>
+      </a>
+    </li>
+  
+</ul>
+
+
+
+
+  <section id="2023" class="taxonomy__section">
+    <h2 class="archive__subtitle">2023</h2>
+    <div class="entries-list">
+      
+        
 
 
 
@@ -323,8 +360,8 @@ sudo apt-get install mariadb-server
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -378,8 +415,8 @@ sudo apt-get install mariadb-server
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -430,8 +467,8 @@ sudo apt-get install mariadb-server
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -481,8 +518,8 @@ sudo apt-get install mariadb-server
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -529,8 +566,8 @@ SSH 帐号和密码
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -578,8 +615,8 @@ SSH 帐号和密码
   </article>
 </div>
 
-  
-    
+      
+        
 
 
 
@@ -624,10 +661,10 @@ SSH 帐号和密码
   </article>
 </div>
 
-  
-</div>
-
-
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+  </section>
 
 
   </div>

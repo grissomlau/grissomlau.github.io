@@ -1,0 +1,1003 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Linux - Grissom’s Blog</title>
+<meta name="description" content="登录 SSH 帐号和密码">
+
+
+  <meta name="author" content="Grissom">
+  
+  <meta property="article:author" content="Grissom">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Grissom's Blog">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://localhost:4000/os/linux/">
+
+
+  <meta property="og:description" content="登录 SSH 帐号和密码">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-23T00:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/os/linux/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Grissom",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Grissom's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Grissom's Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#os" itemprop="item"><span itemprop="name">Os</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Linux</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Grissom</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am a <strong>programmer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:grissomlau@qq.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/grissomlau" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Linux">
+    <meta itemprop="description" content="登录SSH 帐号和密码">
+    <meta itemprop="datePublished" content="2023-05-23T00:00:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Linux
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#登录">登录</a><ul><li><a href="#ssh-帐号和密码">SSH 帐号和密码</a></li><li><a href="#ssh-帐号和公钥">SSH 帐号和公钥</a></li></ul></li><li><a href="#常用命令">常用命令</a><ul><li><a href="#查看命令">查看命令</a><ul><li><a href="#进入-root">进入 root</a></li><li><a href="#查看系统信息">查看系统信息</a></li><li><a href="#查看用户信息">查看用户信息</a></li><li><a href="#查看系统版本">查看系统版本</a></li><li><a href="#查看当前目录">查看当前目录</a></li><li><a href="#查看当前目录下的文件">查看当前目录下的文件</a></li><li><a href="#查看端口占用情况">查看端口占用情况</a></li><li><a href="#查看进程">查看进程</a></li><li><a href="#查看日志">查看日志</a></li><li><a href="#查看文件">查看文件</a></li><li><a href="#查看文件大小">查看文件大小</a></li><li><a href="#查看磁盘使用情况">查看磁盘使用情况</a></li><li><a href="#查看内存使用量">查看内存使用量</a></li><li><a href="#查看系统负载">查看系统负载</a></li><li><a href="#查看系统时间">查看系统时间</a></li><li><a href="#查看系统环境变量">查看系统环境变量</a></li><li><a href="#查看防火墙状态">查看防火墙状态</a></li><li><a href="#查看命令-1">查看命令</a></li><li><a href="#查看ip">查看ip</a></li><li><a href="#查看日志-1">查看日志</a></li></ul></li><li><a href="#操作命令">操作命令</a><ul><li><a href="#用户和用户组管理">用户和用户组管理</a></li><li><a href="#创建删除修改文件夹">创建、删除、修改文件夹</a></li><li><a href="#创建删除修改文件">创建、删除、修改文件</a></li><li><a href="#批量操作">批量操作</a></li></ul></li></ul></li><li><a href="#linux-常识">linux 常识</a><ul><li><a href="#linux-文件系统">linux 文件系统</a></li><li><a href="#linux-哲学">linux 哲学</a></li><li><a href="#常见的配置文件和位置">常见的配置文件和位置</a></li><li><a href="#linux-常用目录">linux 常用目录</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="登录">登录</h1>
+<h2 id="ssh-帐号和密码">SSH 帐号和密码</h2>
+
+<h2 id="ssh-帐号和公钥">SSH 帐号和公钥</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen
+<span class="c"># 一路回车，生成 id_rsa 和 id_rsa.pub，也可以输入passphrase，来保护 key, 每次使用 key 时都需要输入 passphrase</span>
+<span class="c"># 将 id_rsa.pub 的内容添加到 ~/.ssh/authorized_keys 中</span>
+<span class="nb">cat </span>id_rsa.pub <span class="o">&gt;&gt;</span> ~/.ssh/authorized_keys
+<span class="c"># 将 id_rsa 拉到本地，供 xshell 使用 ssh 远程到服务器时使用</span>
+</code></pre></div></div>
+
+<h1 id="常用命令">常用命令</h1>
+<h2 id="查看命令">查看命令</h2>
+
+<h3 id="进入-root">进入 root</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nt">-i</span>
+</code></pre></div></div>
+
+<h3 id="查看系统信息">查看系统信息</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">uname</span> <span class="nt">-a</span>
+</code></pre></div></div>
+<h3 id="查看用户信息">查看用户信息</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">whoami
+id </span>grissom <span class="c"># 查看 grissom 用户</span>
+</code></pre></div></div>
+<h3 id="查看系统版本">查看系统版本</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat</span> /etc/issue <span class="c"># 查看系统版本</span>
+<span class="nb">cat</span> /proc/version <span class="c"># 查看内核版本</span>
+</code></pre></div></div>
+<h3 id="查看当前目录">查看当前目录</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">pwd</span>
+</code></pre></div></div>
+<h3 id="查看当前目录下的文件">查看当前目录下的文件</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span>
+<span class="c"># 包括隐藏文件</span>
+<span class="nb">ls</span> <span class="nt">-a</span>
+<span class="c"># 包括隐藏文件，包括文件的详细信息</span>
+<span class="nb">ls</span> <span class="nt">-al</span>
+
+<span class="nb">ls</span> <span class="nt">-lh</span> <span class="c"># 查看文件大小,人性化显示</span>
+</code></pre></div></div>
+<h3 id="查看端口占用情况">查看端口占用情况</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看所有端口占用情况</span>
+netstat <span class="nt">-anp</span>
+<span class="c"># 查看所有端口占用情况，只显示监听端口</span>
+netstat <span class="nt">-anp</span> | <span class="nb">grep </span>LISTEN
+<span class="c"># 查看指定端口占用情况</span>
+lsof <span class="nt">-i</span>:8080 
+
+ss <span class="nt">-anp</span> | <span class="nb">grep </span>8080
+
+ss <span class="nt">-tunlp</span> | <span class="nb">grep </span>8080
+
+</code></pre></div></div>
+<h3 id="查看进程">查看进程</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps <span class="nt">-e</span>
+<span class="c"># 查看所有进程</span>
+ps <span class="nt">-ef</span>
+<span class="c"># 查看zookeeper进程</span>
+ps <span class="nt">-ef</span> |grep zookeeper 
+<span class="c"># 显示cpu,内存,启动时间,命令行,并按内存使用量倒序排序</span>
+ps <span class="nt">-aux</span> <span class="nt">--sort</span><span class="o">=</span>-%mem
+top <span class="c">#实时查看进程, shift+m 按内存排序</span>
+</code></pre></div></div>
+<h3 id="查看日志">查看日志</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看最后10行日志</span>
+<span class="nb">tail</span> <span class="nt">-n</span> 10 /var/log/messages
+<span class="c"># 查看最后10行日志，实时刷新</span>
+<span class="nb">tail</span> <span class="nt">-f</span> <span class="nt">-n</span> 10 /var/log/messages
+<span class="c"># 查看前面10行日志</span>
+<span class="nb">head</span> <span class="nt">-n</span> 10 /var/log/messages
+</code></pre></div></div>
+<h3 id="查看文件">查看文件</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看文件内容</span>
+<span class="nb">cat</span> /var/log/messages
+<span class="c"># 查看文件内容，实时刷新</span>
+<span class="nb">tail</span> <span class="nt">-f</span> /var/log/messages
+</code></pre></div></div>
+<h3 id="查看文件大小">查看文件大小</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看文件大小</span>
+<span class="nb">du</span> <span class="nt">-sh</span> /var/log/messages
+<span class="c"># 查看文件夹大小</span>
+<span class="nb">du</span> <span class="nt">-sh</span> /var/log
+dh <span class="nt">-h</span> /var/log
+dh <span class="nt">-h</span> <span class="nt">--max-depth</span><span class="o">=</span>1 <span class="c"># 查看当前目录下的文件夹大小,深度为1</span>
+
+<span class="nb">wc</span> <span class="o">[</span><span class="nt">-lmw</span><span class="o">]</span> <span class="o">[</span>file] <span class="c"># 统计文件的行数、字数、字节数</span>
+<span class="nb">ls</span> |wc <span class="nt">-l</span> <span class="c"># 统计当前目录下的文件个数</span>
+</code></pre></div></div>
+<h3 id="查看磁盘使用情况">查看磁盘使用情况</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看磁盘使用情况</span>
+<span class="nb">df</span> <span class="nt">-h</span>
+</code></pre></div></div>
+<h3 id="查看内存使用量">查看内存使用量</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看内存使用量</span>
+free <span class="nt">-m</span>
+</code></pre></div></div>
+<h3 id="查看系统负载">查看系统负载</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看系统负载</span>
+<span class="nb">uptime</span>
+</code></pre></div></div>
+<h3 id="查看系统时间">查看系统时间</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看系统时间</span>
+<span class="nb">date</span>
+</code></pre></div></div>
+<h3 id="查看系统环境变量">查看系统环境变量</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看系统环境变量</span>
+<span class="nb">env</span>
+</code></pre></div></div>
+<h3 id="查看防火墙状态">查看防火墙状态</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看防火墙状态</span>
+systemctl status firewalld
+<span class="c"># 查看防火墙开放的端口</span>
+firewall-cmd <span class="nt">--list-ports</span>
+<span class="c"># 查看防火墙开放的服务</span>
+firewall-cmd <span class="nt">--list-services</span>
+
+<span class="c"># 查看 ubuntu 防火墙状态</span>
+systemctl status ufw
+<span class="c"># 查看 ubuntu 防火墙开放的端口</span>
+ufw status
+<span class="c"># 查看 ubuntu 防火墙开放的服务</span>
+ufw status numbered
+
+<span class="c"># 云服务器不需要防火墙,通过安全组来控制端口</span>
+</code></pre></div></div>
+<h3 id="查看命令-1">查看命令</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看命令所在位置</span>
+which java
+whereis java <span class="c"># 查看命令所在位置，包括源码位置，以及配置文件位置</span>
+<span class="c"># 查看命令的帮助信息</span>
+man java
+</code></pre></div></div>
+
+<h3 id="查看ip">查看ip</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看ip</span>
+ifconfig
+<span class="c"># 查看ip，只显示ip</span>
+ifconfig | <span class="nb">grep </span>inet | <span class="nb">grep</span> <span class="nt">-v</span> inet6 | <span class="nb">awk</span> <span class="s1">'{print $2}'</span>
+</code></pre></div></div>
+
+<h3 id="查看日志-1">查看日志</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 查看日志</span>
+journalctl <span class="nt">-u</span> nginx.service
+</code></pre></div></div>
+
+<h2 id="操作命令">操作命令</h2>
+<h3 id="用户和用户组管理">用户和用户组管理</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 修改用户密码</span>
+passwd grissom
+<span class="c"># 修改系统时间</span>
+<span class="nb">date</span> <span class="nt">-s</span> <span class="s2">"2020-01-01 00:00:00"</span>
+<span class="c"># 修改系统时区</span>
+timedatectl set-timezone Asia/Shanghai
+<span class="c"># 修改系统语言</span>
+localectl set-locale <span class="nv">LANG</span><span class="o">=</span>zh_CN.UTF-8
+<span class="c"># 修改系统主机名</span>
+hostnamectl set-hostname grissom
+<span class="c"># 添加用户</span>
+useradd grissom
+<span class="c"># 修改用户密码</span>
+passwd grissom
+<span class="c"># 添加用户到 sudo 组</span>
+usermod <span class="nt">-aG</span> <span class="nb">sudo </span>grissom
+<span class="c"># 添加用户到 root 组</span>
+usermod <span class="nt">-aG</span> root grissom
+<span class="c"># 删除用户</span>
+userdel grissom
+<span class="c"># 添加用户组</span>
+groupadd g1
+<span class="c"># 删除用户组</span>
+groupdel g1
+<span class="c"># 添加用户到用户组</span>
+usermod <span class="nt">-aG</span> g1 grissom
+<span class="c"># 删除用户从用户组</span>
+gpasswd <span class="nt">-d</span> grissom g1
+<span class="c"># 查看用户组</span>
+<span class="nb">cat</span> /etc/group
+<span class="c"># 查看用户</span>
+<span class="nb">cat</span> /etc/passwd
+<span class="c"># 查看用户所在组</span>
+<span class="nb">cat</span> /etc/group | <span class="nb">grep </span>grissom
+</code></pre></div></div>
+
+<h3 id="创建删除修改文件夹">创建、删除、修改文件夹</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 创建文件夹</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="c"># 删除文件夹</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="c"># 复制文件夹, -r 递归复制，-f 强制覆盖</span>
+<span class="nb">cp</span> <span class="nt">-r</span> ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span> ./data/<span class="o">{</span>dir1.bak,dir2.bak<span class="o">}</span>
+<span class="c"># 修改文件权限,4r,2w,1x, 下面命令 owner 分rwx,group 分rx,other 分r</span>
+<span class="nb">chmod</span> <span class="nt">-R</span> 777 ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="nb">chmod</span> +x sth.sh <span class="c"># 给文件添加可执行权限</span>
+<span class="nb">chmod </span>ug-x sth.sh <span class="c"># 给文件删除用户和组的可执行权限</span>
+<span class="c"># 修改文件所有者，grissom 是用户名，groupname 是用户组名, 如果用户组不存在，则会创建用户组,也可以不指定用户组</span>
+<span class="nb">chown</span> <span class="nt">-R</span> grissom:grissom ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="c"># 修改文件夹所有者和权限</span>
+<span class="nb">chown</span> <span class="nt">-R</span> grissom:grissom ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span> <span class="o">&amp;&amp;</span> <span class="nb">chmod</span> <span class="nt">-R</span> 777 ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="c"># 文件夹重命名</span>
+<span class="nb">mv</span> ./data/logs ./data/logs.bak
+</code></pre></div></div>
+<h3 id="创建删除修改文件">创建、删除、修改文件</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 创建文件</span>
+<span class="nb">touch</span> ./data/logs/test.log
+<span class="c"># 写入文件内容，如果文件不存在，则创建文件，如果文件存在，则追加内容, &gt;&gt; 表示追加，&gt; 表示覆盖</span>
+<span class="nb">echo</span> <span class="s2">"hello world"</span> <span class="o">&gt;&gt;</span> ./data/logs/test.log
+<span class="c"># 删除文件</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> ./data/logs/test.log
+<span class="c"># 复制文件夹, -r 递归复制，-f 强制覆盖</span>
+<span class="nb">cp</span> <span class="nt">-r</span> ./data/test1/<span class="o">{</span>txt1.txt,txt2.txt<span class="o">}</span> ./data/test2
+<span class="c"># 修改文件权限,4r,2w,1x, 下面命令 owner 分rwx,group 分rx,other 分r</span>
+<span class="nb">chmod </span>754 ./data/logs/test.log
+<span class="c"># 修改文件所有者，grissom 是用户名，groupname 是用户组名, 如果用户组不存在，则会创建用户组,也可以不指定用户组</span>
+<span class="nb">chown </span>grissom:groupname ./data/logs/test.log
+<span class="c"># 修改文件所有者和权限</span>
+<span class="nb">chown </span>grissom:groupname ./data/logs/test.log <span class="o">&amp;&amp;</span> <span class="nb">chmod </span>777 ./data/logs/test.log
+<span class="c"># 文件重命名</span>
+<span class="nb">mv</span> ./data/logs/test.log ./data/logs/test.bak
+</code></pre></div></div>
+
+<h3 id="批量操作">批量操作</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 批量创建文件夹</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="c"># 批量删除文件夹</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="c"># 批量复制文件夹, -r 递归复制，-f 强制覆盖</span>
+<span class="nb">cp</span> <span class="nt">-r</span> ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span> ./data/<span class="o">{</span>dir1.bak,dir2.bak<span class="o">}</span>
+<span class="c"># 批量修改文件权限,4r,2w,1x, 下面命令 owner 分rwx,group 分rx,other 分r</span>
+<span class="nb">chmod</span> <span class="nt">-R</span> 777 ./data/<span class="o">{</span>dir1,dir2<span class="o">}</span>
+<span class="c"># 批量执行 shell 文件</span>
+find ./data <span class="nt">-name</span> <span class="s2">"*.sh"</span> | xargs <span class="nt">-I</span> <span class="o">{}</span> sh <span class="o">{}</span>
+<span class="k">for </span>file <span class="k">in</span> <span class="si">$(</span><span class="nb">ls</span> ./data/<span class="k">*</span>.sh<span class="si">)</span><span class="p">;</span> <span class="k">do </span>sh <span class="nv">$file</span><span class="p">;</span> <span class="k">done</span>
+
+</code></pre></div></div>
+
+<h1 id="linux-常识">linux 常识</h1>
+<h2 id="linux-文件系统">linux 文件系统</h2>
+<p>文件系统是一种数据结构，用于组织、管理和存储数据</p>
+<h2 id="linux-哲学">linux 哲学</h2>
+<p>do one thing and do it well, 一个程序只做一件事，做好这件事</p>
+<h2 id="常见的配置文件和位置">常见的配置文件和位置</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># /etc/passwd 用户信息，不要直接修改，使用 useradd usermod userdel 等命令来修改</span>
+<span class="c"># /etc/shadow 用户密码,不要直接修改，使用 passwd 命令来修改</span>
+<span class="c"># /etc/group 用户组信息,不要直接修改，使用 groupadd groupdel 等命令来修改</span>
+<span class="c"># /etc/hosts 主机名和ip映射，可以直接修改</span>
+<span class="c"># /etc/hostname 主机名，可以直接修改</span>
+<span class="c"># /etc/profile 系统环境变量,使用 source /etc/profile 命令来生效</span>
+<span class="c"># /etc/my.cnf mysql 配置文件</span>
+<span class="c"># /etc/nginx/nginx.conf nginx 配置文件</span>
+<span class="c"># /etc/nginx/conf.d/ nginx 配置文件目录</span>
+<span class="c"># ~/.bashrc 用户环境变量,使用 source ~/.bashrc 命令来生效</span>
+<span class="c"># ~/.bash_profile 用户环境变量,使用 source ~/.bash_profile 命令来生效</span>
+<span class="c"># ~/.vimrc vim 配置文件</span>
+<span class="c"># ~/.gitconfig git 配置文件</span>
+<span class="c"># ~/.ssh/authorized_keys ssh 公钥</span>
+<span class="c"># ~/.ssh/id_rsa ssh 私钥</span>
+<span class="c"># ~/.ssh/id_rsa.pub ssh 公钥</span>
+</code></pre></div></div>
+<h2 id="linux-常用目录">linux 常用目录</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># /bin 常用命令</span>
+<span class="c"># /sbin 系统管理命令</span>
+<span class="c"># /etc 配置文件</span>
+<span class="c"># /home 用户目录</span>
+<span class="c"># /root root 用户目录</span>
+<span class="c"># /usr/bin 用户命令</span>
+<span class="c"># /usr/sbin 用户系统管理命令</span>
+<span class="c"># /usr/local/bin 用户安装的命令</span>
+<span class="c"># /var/log 日志目录</span>
+<span class="c"># /var/lib/mysql mysql 数据目录</span>
+<span class="c"># /var/lib/nginx nginx 数据目录</span>
+<span class="c"># /mnt 挂载目录</span>
+<span class="c"># /tmp 临时目录</span>
+<span class="c"># /proc 进程目录</span>
+<span class="c"># /dev 设备目录</span>
+<span class="c"># /sys 系统目录</span>
+</code></pre></div></div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">linux</a><span class="sep">, </span>
+    
+      <a href="/tags/#server" class="page__taxonomy-item" rel="tag">server</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#os" class="page__taxonomy-item" rel="tag">os</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Linux%20http%3A%2F%2Flocalhost%3A4000%2Fos%2Flinux%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fos%2Flinux%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fos%2Flinux%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/database/redis/" class="pagination--pager" title="Redis
+">Previous</a>
+    
+    
+      <a href="/security/ssl-ssh-login/" class="pagination--pager" title="SSL SSH Login
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/database/mariadb/" rel="permalink">MariaDB
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T10:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">安装
+服务端
+sudo apt-get install mariadb-server
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/idea/summary/" rel="permalink">Summary
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">linux
+权限管理
+
+  角色分为三类：owner、group、other
+  三类权限分别为：r(4)、w(2)、x(1)
+  一个文件只能有一个所有者，但可以有多个用户组
+  一个用户可以同时属于多个组，但只有一个主组
+  一个用户的权限由其所有者权限和所属组权限共同决定
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/network/scientific-surfing/" rel="permalink">科学上网
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">OpenVPN
+安装
+服务端
+
+  参考 https://github.com/angristan/openvpn-install
+  全部默认即可
+  vpn 会安装虚拟网卡接管全部流量，如果不需要全部走vpn, 需要配置route, 可以在客户端也可以在服务端配置,但最终连上服务端时，服务端会把 push “...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/security/ssl-ssh-login/" rel="permalink">SSL SSH Login
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">申请免费的ssl证书
+国内的阿里云、腾讯云、百度云等
+都有免费的ssl证书，最长有效期1年，但是需要备案，备案需要花钱和实名制，所以这里不推荐使用。
+国外的letsencrypt
+可以申请免费的ssl证书，有效期3个月，但是可以自动续期，所以这里推荐使用。
+需要安装certbot，将nginx.cnf交给她管理，...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/grissomlau" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Grissom. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

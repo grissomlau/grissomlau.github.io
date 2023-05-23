@@ -1,0 +1,808 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>MariaDB - Grissom’s Blog</title>
+<meta name="description" content="安装 服务端 sudo apt-get install mariadb-server">
+
+
+  <meta name="author" content="Grissom">
+  
+  <meta property="article:author" content="Grissom">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Grissom's Blog">
+<meta property="og:title" content="MariaDB">
+<meta property="og:url" content="http://localhost:4000/database/mariadb/">
+
+
+  <meta property="og:description" content="安装 服务端 sudo apt-get install mariadb-server">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-05-23T10:28:33+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/database/mariadb/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Grissom",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Grissom's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Grissom's Blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#database" itemprop="item"><span itemprop="name">Database</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">MariaDB</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Grissom</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>I am a <strong>programmer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:grissomlau@qq.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/grissomlau" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="MariaDB">
+    <meta itemprop="description" content="安装服务端sudo apt-get install mariadb-server">
+    <meta itemprop="datePublished" content="2023-05-23T10:28:33+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">MariaDB
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T10:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#安装">安装</a><ul><li><a href="#服务端">服务端</a></li><li><a href="#客户端">客户端</a><ul><li><a href="#ubuntu-命令行客户端">Ubuntu 命令行客户端</a></li><li><a href="#windows-客户端">Windows 客户端</a></li><li><a href="#mac-客户端">Mac 客户端</a></li></ul></li><li><a href="#配置">配置</a><ul><li><a href="#服务端ip绑定和用户权限">服务端(ip绑定和用户权限)</a><ul><li><a href="#初始化-root-密码">初始化 root 密码</a></li><li><a href="#ip绑定">ip绑定</a></li><li><a href="#用户权限">用户权限</a></li></ul></li></ul></li></ul></li><li><a href="#拉数据">拉数据</a><ul><li><a href="#快速导出excel效率最高的方式">快速导出excel,效率最高的方式</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="安装">安装</h1>
+<h2 id="服务端">服务端<a id="install-server"></a></h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>mariadb-server
+</code></pre></div></div>
+
+<h2 id="客户端">客户端<a id="install-client"></a></h2>
+<h3 id="ubuntu-命令行客户端">Ubuntu 命令行客户端</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>mariadb-client
+</code></pre></div></div>
+
+<h3 id="windows-客户端">Windows 客户端</h3>
+<ul>
+  <li><a href="https://dev.mysql.com/downloads/workbench/">MySQL Workbench</a></li>
+  <li><a href="https://www.heidisql.com/download.php">HeidiSQL</a></li>
+  <li><a href="https://www.navicat.com.cn/download/navicat-premium">Navicat</a></li>
+  <li><a href="https://www.webyog.com/en/downloads">SQLyog</a></li>
+</ul>
+
+<h3 id="mac-客户端">Mac 客户端</h3>
+<ul>
+  <li><a href="https://sequelpro.com/download">Sequel Pro</a></li>
+</ul>
+
+<h2 id="配置">配置</h2>
+<h3 id="服务端ip绑定和用户权限">服务端(ip绑定和用户权限)<a id="config-server"></a></h3>
+<h4 id="初始化-root-密码">初始化 root 密码</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>mysql_secure_installation
+</code></pre></div></div>
+<h4 id="ip绑定">ip绑定</h4>
+<ul>
+  <li>需要修改配置文件，使其支持远程连接，这里远程是指 server 绑定到多个网卡的 IP 地址，允许通过这些本机的网卡 IP 地址连接到 server</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vim /etc/mysql/mariadb.conf.d/50-server.cnf
+<span class="c"># 修改 bind-address 为 0.0.0.0, 默认是 127.0.0.1, 即只能本地 localhost 连接 ,然后重启服务</span>
+
+</code></pre></div></div>
+<h4 id="用户权限">用户权限</h4>
+<ul>
+  <li>配置用户权限</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 登录 mysql</span>
+mysql <span class="nt">-u</span> root <span class="nt">-p</span>
+<span class="c"># 选择数据库</span>
+use mysql<span class="p">;</span>
+<span class="c"># 查看用户</span>
+<span class="k">select </span>user,host from user<span class="p">;</span>
+
+<span class="c"># 创建用户，下面的 % 是指所有 IP 地址都可以连接，如果指定 IP 地址，如 '用户名'@'192.168.10.8', 也可以用通配符指定网段 '用户名'@'192.168.10.%'</span>
+create user <span class="s1">'用户名'</span>@<span class="s1">'%'</span> identified by <span class="s1">'密码'</span><span class="p">;</span>
+
+<span class="c"># 授权，% 可改成具体的ip地址，'用户名'@'%' 必须存在于 user 表中，*.* 表示所有数据库，all privileges 表示所有权限</span>
+grant all privileges on <span class="k">*</span>.<span class="k">*</span> to <span class="s1">'用户名'</span>@<span class="s1">'%'</span><span class="p">;</span>
+
+<span class="c"># 查看用户权限</span>
+show grants <span class="k">for</span> <span class="s1">'用户名'</span>@<span class="s1">'%'</span><span class="p">;</span>
+
+<span class="c"># 刷新权限</span>
+flush privileges<span class="p">;</span>
+
+</code></pre></div></div>
+<ul>
+  <li>移除用户权限</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 移除权限</span>
+revoke all privileges on <span class="k">*</span>.<span class="k">*</span> from <span class="s1">'用户名'</span>@<span class="s1">'%'</span><span class="p">;</span>
+
+<span class="c"># 删除用户</span>
+drop user <span class="s1">'用户名'</span>@<span class="s1">'%'</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<h1 id="拉数据">拉数据</h1>
+<h2 id="快速导出excel效率最高的方式">快速导出excel,效率最高的方式</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 导出csv</span>
+<span class="k">select</span> <span class="k">*</span> from table_name into outfile <span class="s1">'/tmp/table_name.csv'</span> fields terminated by <span class="s1">','</span> optionally enclosed by <span class="s1">'"'</span> escaped by <span class="s1">'"'</span> lines terminated by <span class="s1">'\n'</span><span class="p">;</span>
+<span class="c"># 使用 bash 导出 csv</span>
+mysql <span class="nt">-u</span> your_username <span class="nt">-p</span> your_database_name <span class="nt">-e</span> <span class="s2">"SELECT * FROM your_table_name;"</span> | <span class="nb">sed</span> <span class="s1">'s/\t/","/g;s/"NULL"/""/g;s/^/"/;s/$/"/'</span> <span class="o">&gt;</span> /path/to/export/directory/your_table_name.csv
+<span class="c"># 然后用 zip 压缩</span>
+zip <span class="nt">-r</span> your_table_name.zip your_table_name.csv
+<span class="c"># 最后用 scp/ftp 拉到本地</span>
+scp your_username@your_server_ip:/path/to/your_table_name.zip /path/to/your_local_directory
+
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#mariadb" class="page__taxonomy-item" rel="tag">mariadb</a><span class="sep">, </span>
+    
+      <a href="/tags/#mysql" class="page__taxonomy-item" rel="tag">mysql</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#database" class="page__taxonomy-item" rel="tag">database</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2023-05-23T10:28:33+08:00">May 23, 2023</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=MariaDB%20http%3A%2F%2Flocalhost%3A4000%2Fdatabase%2Fmariadb%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdatabase%2Fmariadb%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdatabase%2Fmariadb%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/idea/summary/" class="pagination--pager" title="Summary
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/idea/summary/" rel="permalink">Summary
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">linux
+权限管理
+
+  角色分为三类：owner、group、other
+  三类权限分别为：r(4)、w(2)、x(1)
+  一个文件只能有一个所有者，但可以有多个用户组
+  一个用户可以同时属于多个组，但只有一个主组
+  一个用户的权限由其所有者权限和所属组权限共同决定
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/network/scientific-surfing/" rel="permalink">科学上网
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T09:28:33+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">OpenVPN
+安装
+服务端
+
+  参考 https://github.com/angristan/openvpn-install
+  全部默认即可
+  vpn 会安装虚拟网卡接管全部流量，如果不需要全部走vpn, 需要配置route, 可以在客户端也可以在服务端配置,但最终连上服务端时，服务端会把 push “...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/security/ssl-ssh-login/" rel="permalink">SSL SSH Login
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">申请免费的ssl证书
+国内的阿里云、腾讯云、百度云等
+都有免费的ssl证书，最长有效期1年，但是需要备案，备案需要花钱和实名制，所以这里不推荐使用。
+国外的letsencrypt
+可以申请免费的ssl证书，有效期3个月，但是可以自动续期，所以这里推荐使用。
+需要安装certbot，将nginx.cnf交给她管理，...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/os/linux/" rel="permalink">Linux
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-05-23T00:00:00+08:00">May 23, 2023</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">登录
+SSH 帐号和密码
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/grissomlau" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Grissom. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
