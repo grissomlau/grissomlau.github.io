@@ -7,7 +7,7 @@ last_modified_date:   2023-05-23 17:09:29 +0800
 ---
 <details  markdown="block">
   <summary>
-    Table of contents
+    TOC
   </summary>
 
 1. [安装](#安装)
@@ -24,34 +24,34 @@ last_modified_date:   2023-05-23 17:09:29 +0800
 
 
 
-## 安装
-### 服务端
+# 安装
+## 服务端
 ```bash
 sudo apt-get install mariadb-server
 ```
 
-### 客户端
-#### Ubuntu 命令行客户端
+## 客户端
+### Ubuntu 命令行客户端
 ```bash
 sudo apt-get install mariadb-client
 ```
 
-#### Windows 客户端
+### Windows 客户端
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
 - [HeidiSQL](https://www.heidisql.com/download.php)
 - [Navicat](https://www.navicat.com.cn/download/navicat-premium)
 - [SQLyog](https://www.webyog.com/en/downloads)
 
-#### Mac 客户端
+### Mac 客户端
 - [Sequel Pro](https://sequelpro.com/download)
 
-### [](#配置)配置
-#### [](#服务端ip绑定和用户权限a-idconfig-servera)服务端(ip绑定和用户权限)<a id="config-server"></a>
-###### [](#初始化root密码)初始化root密码
+## 配置
+### 服务端(ip绑定和用户权限)<a id="config-server"></a>
+#### 初始化root密码
 ```bash
 sudo mysql_secure_installation
 ```
-###### [](#ip绑定)ip绑定
+#### ip绑定
 - 需要修改配置文件，使其支持远程连接，这里远程是指 server 绑定到多个网卡的 IP 地址，允许通过这些本机的网卡 IP 地址连接到 server
 
 ```bash
@@ -59,7 +59,7 @@ sudo vim /etc/mysql/mariadb.conf.d/50-server.cnf
 # 修改 bind-address 为 0.0.0.0, 默认是 127.0.0.1, 即只能本地 localhost 连接 ,然后重启服务
 
 ```
-###### [](#用户权限)用户权限
+#### 用户权限
 - 配置用户权限
 
 ```bash

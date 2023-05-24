@@ -8,7 +8,7 @@ last_modified_date:   2023-05-23 17:09:29 +0800
 
 <details  markdown="block">
   <summary>
-    Table of contents
+    TOC
   </summary>
 
 1. [登录](#登录)
