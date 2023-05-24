@@ -1,7 +1,7 @@
 title: Just the Docs Template
 description: A starter template for a Jeykll site using the Just the Docs theme!
-# theme: just-the-docs
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs # using .github\workflows\pages.ymll defined action
+# remote_theme: just-the-docs/just-the-docs # uncomment when using github's action of  pages-builld-deployment 
 
 url: https://grissomlau.github.io
 
