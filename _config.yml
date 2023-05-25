@@ -1,9 +1,26 @@
 title: Grissom's Docs
-description: Docs for Grissom
+description: Something Special
 theme: just-the-docs # using .github\workflows\pages.ymll defined action
 # remote_theme: just-the-docs/just-the-docs # uncomment when using github's action of  pages-builld-deployment 
 
 url: https://grissomlau.github.io
 
+permalink: pretty
+
 aux_links:
    My GitHub: https://github.com/grissomlau
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
+# External navigation links
+nav_external_links:
+  - title: Grissom's Github 
+    url: https://github.com/grissomlau
+
+# Footer content
+# appears at the bottom of every page's main content
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "Copyright &copy; 2023 Grissom."

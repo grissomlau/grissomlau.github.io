@@ -25,10 +25,12 @@ last_modified_date:   2023-05-23 17:09:29 +0800
 
 </details>
 
-# 登录
-## SSH 帐号和密码 
+# Linux
+---
+## 登录
+### SSH 帐号和密码 
 
-## SSH 帐号和公钥
+### SSH 帐号和公钥
 ```bash
 ssh-keygen
 # 一路回车，生成 id_rsa 和 id_rsa.pub，也可以输入passphrase，来保护 key, 每次使用 key 时都需要输入 passphrase
@@ -37,8 +39,8 @@ cat id_rsa.pub >> ~/.ssh/authorized_keys
 # 将 id_rsa 拉到本地，供 xshell 使用 ssh 远程到服务器时使用
 ``` 
 ---
-# 常用命令
-## 查看命令
+## 常用命令
+### 查看命令
 
 - 进入 root
 
@@ -212,7 +214,7 @@ ifconfig | grep inet | grep -v inet6 | awk '{print $2}'
 journalctl -u nginx.service
 ```
 
-## 操作命令
+### 操作命令
 - 用户和用户组管理
 
 ```bash
@@ -310,12 +312,12 @@ for file in $(ls ./data/*.sh); do sh $file; done
 
 ```
 ---
-# linux 常识
-## linux 文件系统
+## linux 常识
+### linux 文件系统
 文件系统是一种数据结构，用于组织、管理和存储数据
-## linux 哲学
+### linux 哲学
  do one thing and do it well, 一个程序只做一件事，做好这件事
-## 常见的配置文件和位置
+### 常见的配置文件和位置
 ```bash
 # /etc/passwd 用户信息，不要直接修改，使用 useradd usermod userdel 等命令来修改
 # /etc/shadow 用户密码,不要直接修改，使用 passwd 命令来修改
@@ -334,7 +336,7 @@ for file in $(ls ./data/*.sh); do sh $file; done
 # ~/.ssh/id_rsa ssh 私钥
 # ~/.ssh/id_rsa.pub ssh 公钥
 ```
-## linux 常用目录
+### linux 常用目录
 ```bash
 # /bin 常用命令
 # /sbin 系统管理命令
